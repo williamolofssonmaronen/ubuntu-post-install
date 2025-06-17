@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Disable dynamic workspaces
+gsettings set org.gnome.mutter dynamic-workspaces false
+
+# Set 10 fixed workspaces
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 10
+
 # Switch to workspace
 for i in {1..9}; do
   gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-$i "['<Alt>$i']"
